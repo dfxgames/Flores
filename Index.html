@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor de Loto - Flores que Hablan por Ti</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter y Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Iconos (Feather Icons) -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFF8F5;
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .action-button {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .product-card {
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+             border-radius: 1rem;
+             overflow: hidden;
+        }
+        .product-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+        }
+        /* Estilos para el slider (Swiper) */
+        .product-slider {
+            width: 100%;
+            height: 16rem; /* 256px */
+        }
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .product-slider .swiper-button-next::after,
+        .product-slider .swiper-button-prev::after {
+            font-size: 1.5rem;
+        }
+        .product-slider .swiper-button-next,
+        .product-slider .swiper-button-prev {
+            color: white;
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 9999px;
+            transition: opacity 0.3s ease;
+            opacity: 0;
+        }
+        .product-slider:hover .swiper-button-next,
+        .product-slider:hover .swiper-button-prev {
+            opacity: 1;
+        }
+        .product-slider .swiper-pagination-bullet-active {
+            background-color: #D6336C;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D6336C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>
+                <h1 class="font-display text-2xl font-bold text-pink-600">Flor de Loto</h1>
+            </div>
+            <a href="#productos" class="hidden md:inline bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors">
+                Ver Ramos
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-16 text-center">
+        <h2 class="font-display text-4xl md:text-6xl font-bold mb-4 leading-tight">Flores que hablan por ti</h2>
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Encuentra el arreglo perfecto para cada ocasión especial. Frescura, elegancia y entrega con amor.</p>
+        <a href="#productos" class="action-button inline-block bg-pink-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg">
+            Explorar Colección
+        </a>
+    </main>
+
+    <!-- Productos Section -->
+    <section id="productos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h3 class="font-display text-3xl font-bold text-center mb-12">Nuestros Ramos y Arreglos</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+                
+                <!-- Producto 1 con Slider -->
+                <div class="product-card bg-gray-50 shadow-lg">
+                    <div class="swiper product-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/F472B6/FFFFFF?text=Amor+Eterno+1" alt="Ramo de rosas rojas - vista 1"></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/EC4899/FFFFFF?text=Amor+Eterno+2" alt="Ramo de rosas rojas - vista 2"></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/DB2777/FFFFFF?text=Amor+Eterno+3" alt="Ramo de rosas rojas - vista 3"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Ramo "Amor Eterno"</h4>
+                        <p class="text-gray-600 mb-4">Clásicas y apasionadas rosas rojas para expresar un amor profundo.</p>
+                        <p class="text-2xl font-display font-bold text-pink-600 mb-4">$45.00</p>
+                        <button onclick="orderViaSMS('Ramo Amor Eterno', '45.00')" class="action-button w-full bg-blue-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center space-x-2">
+                            <i data-feather="send" class="w-5 h-5"></i><span>Ordenar por Mensaje (SMS)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 con Slider -->
+                <div class="product-card bg-gray-50 shadow-lg">
+                     <div class="swiper product-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/FBBF24/FFFFFF?text=Dulce+Amanecer+1" alt="Arreglo de girasoles - vista 1"></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/F59E0B/FFFFFF?text=Dulce+Amanecer+2" alt="Arreglo de girasoles - vista 2"></div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Arreglo "Dulce Amanecer"</h4>
+                        <p class="text-gray-600 mb-4">Una explosión de alegría con vibrantes girasoles y delicadas margaritas.</p>
+                        <p class="text-2xl font-display font-bold text-pink-600 mb-4">$38.00</p>
+                        <button onclick="orderViaSMS('Arreglo Dulce Amanecer', '38.00')" class="action-button w-full bg-blue-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center space-x-2">
+                             <i data-feather="send" class="w-5 h-5"></i><span>Ordenar por Mensaje (SMS)</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 y 4 (mismo patrón) -->
+                <div class="product-card bg-gray-50 shadow-lg">
+                     <div class="swiper product-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/A78BFA/FFFFFF?text=Jardín+Secreto+1" alt="Ramo silvestre - vista 1"></div>
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/8B5CF6/FFFFFF?text=Jardín+Secreto+2" alt="Ramo silvestre - vista 2"></div>
+                             <div class="swiper-slide"><img src="https://placehold.co/400x400/7C3AED/FFFFFF?text=Jardín+Secreto+3" alt="Ramo silvestre - vista 3"></div>
+                        </div>
+                        <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Ramo "Jardín Secreto"</h4>
+                        <p class="text-gray-600 mb-4">Una mezcla encantadora de flores de temporada con un toque silvestre.</p>
+                        <p class="text-2xl font-display font-bold text-pink-600 mb-4">$42.00</p>
+                         <button onclick="orderViaSMS('Ramo Jardín Secreto', '42.00')" class="action-button w-full bg-blue-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center space-x-2">
+                             <i data-feather="send" class="w-5 h-5"></i><span>Ordenar por Mensaje (SMS)</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-card bg-gray-50 shadow-lg">
+                    <div class="swiper product-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="https://placehold.co/400x400/60A5FA/FFFFFF?text=Cielo+Azul+1" alt="Ramo de hortensias - vista 1"></div>
+                        </div>
+                        <div class="swiper-button-next"></div><div class="swiper-button-prev"></div><div class="swiper-pagination"></div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-2">Ramo "Cielo Azul"</h4>
+                        <p class="text-gray-600 mb-4">Elegantes hortensias azules que transmiten calma y gratitud.</p>
+                        <p class="text-2xl font-display font-bold text-pink-600 mb-4">$55.00</p>
+                         <button onclick="orderViaSMS('Ramo Cielo Azul', '55.00')" class="action-button w-full bg-blue-500 text-white font-semibold py-3 rounded-lg flex items-center justify-center space-x-2">
+                            <i data-feather="send" class="w-5 h-5"></i><span>Ordenar por Mensaje (SMS)</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cómo funciona (sin cambios) -->
+    <section id="como-funciona" class="py-20">
+        <!-- ... (contenido idéntico a la versión anterior) ... -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <!-- ... (contenido idéntico a la versión anterior) ... -->
+    </footer>
+
+    <!-- Swiper's JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        // --- IMPORTANTE ---
+        // Reemplaza este número con el número de tu tienda.
+        // Debe ser solo el número, sin código de país con '+' ni espacios.
+        const phoneNumber = "11234567890"; 
+
+        function orderViaSMS(productName, productPrice) {
+            // Se crea un mensaje de texto plano, ya que SMS no soporta formato.
+            const message = `¡Hola Flor de Loto! Quisiera ordenar: Producto: ${productName}, Precio: $${productPrice}. Por favor, confírmenme los siguientes pasos. Gracias.`;
+            
+            // Codificamos el mensaje para que sea parte de la URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Creamos la URL para SMS y la abrimos.
+            // En iOS se usa '&' para el cuerpo, en Android '?' pero '&' es más compatible.
+            const smsURL = `sms:${phoneNumber}?&body=${encodedMessage}`;
+            
+            window.location.href = smsURL;
+        }
+        
+        // Inicializar los íconos de Feather
+        feather.replace();
+
+        // Inicializar todos los sliders de productos
+        const swiper = new Swiper('.product-slider', {
+            loop: true,
+            grabCursor: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
+    </script>
+
+</body>
+</html>
+
